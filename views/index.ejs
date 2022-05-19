@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAYLIST</title>
 </head>
+
 <body>
     <h1>Hello World</h1>
 
     <a href="/admin">admin</a>
+
+    <% playlist.forEach((music)=> { %>
+        <section>
+            <h2><%= music.name %></h2>
+
+            <p><%= music.author %></p>
+
+            <img src="<%= music.linkImage %>" alt="Image of music">
+            <audio src="<%= music.linkMusic %>" controls></audio>
+        </section>
+    <% }) %>
 </body>
 </html>

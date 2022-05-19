@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 
 connectToDB();
 
-app.get("/", (req, res) => {
-  res.render("index")
+app.get("/", async (req, res) => {
+  const playlist = await Music.find();
+  res.render("index", { playlist });
 });
 
 app.get("/admin", (req, res) => {
