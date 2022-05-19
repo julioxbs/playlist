@@ -142,6 +142,65 @@ section#player table td img {
     margin-left: 1rem;
 }
 
+/* MODAL */
+
+section#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#modal div#card {
+    width: 50%;
+    position: relative;
+    background-color: var(--primary);
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+
+section#modal div#card a#close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+section#modal div#card hr {
+    margin: 1rem 0;
+}
+
+section#modal div#card form#form-modal input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+section#modal div#card form#form-modal button {
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    background-color: greenyellow;
+    font-weight: bold;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 968px) {
     section#player .content {
         flex-direction: column;

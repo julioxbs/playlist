@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>PLAYLIST</title>
 </head>
 
@@ -14,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="/">
-                    <img src="img/logoblue.png" alt="Logo blue">
+                    <img src="/img/logoblue.png" alt="Logo blue">
                 </a></li>
 
             <li><a href="/">
@@ -71,20 +70,64 @@
                                 <img src="<%= music.linkImage %>" alt="Image of music">
                             </td>
 
-                            <td><%= music.name %></td>
-                
-                            <td><%= music.author %></td>
-                
+                            <td>
+                                <%= music.name %>
+                            </td>
+
+                            <td>
+                                <%= music.author %>
+                            </td>
+
                             <td id="actions">
-                                <a class="edit" href="#">Edit</a>
+                                <a class="edit" href="/by/<%= music._id %>">Edit</a>
                                 <a class="del" href="#">Delete</a>
                             </td>
                         </tr>
-                    <% }) %>
+                        <% }) %>
                 </tbody>
             </table>
         </div>
     </section>
+
+    <% if (music !=null) { %>
+        <section id="modal">
+            <div id="card">
+                <a id="close-modal" href="/admin">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+
+                <h2>Music Edit</h2>
+
+                <hr>
+
+                <form id="form-modal" method="post" action="/update/<%= music._id %>">
+                    <label for="name">
+                        Music name:
+                        <input type="text" name="name" id="name" required value="<%= music.name %>">
+                    </label>
+
+                    <label for="author">
+                        Author name:
+                        <input type="text" name="author" id="author" required value="<%= music.author %>">
+                    </label>
+
+                    <label for="linkImage">
+                        Link of image:
+                        <input type="text" name="linkImage" id="linkImage" required value="<%= music.linkImage %>">
+                    </label>
+
+                    <label for="linkMusic">
+                        Link of music:
+                        <input type="text" name="linkMusic" id="linkMusic" required value="<%= music.linkMusic %>">
+                    </label>
+
+
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+
+        </section>
+        <% } %>
 </body>
 
 </html>
