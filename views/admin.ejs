@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,82 @@
     <link rel="stylesheet" href="style.css">
     <title>PLAYLIST</title>
 </head>
+
 <body>
-    <a href="/">back</a>
-    <h1>Register a new music</h1>
+    <nav>
+        <ul>
+            <li><a href="/">
+                    <img src="img/logoblue.png" alt="Logo blue">
+                </a></li>
 
-    <form action="/create" method="post">
-        <label for="name">
-            Write the name of the music:
-            <input type="text" name="name" id="name">
-        </label>
+            <li><a href="/">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a></li>
+        </ul>
+    </nav>
 
-        <label for="author">
-            Write the name of author:
-            <input type="text" name="author" id="author">
-        </label>
+    <section id="addForm">
+        <h1>Register a new music</h1>
 
-        <label for="linkImage">
-            Write the image of the music:
-            <input type="text" name="linkImage" id="linkImage">
-        </label>
+        <form action="/create" method="post">
+            <label for="name">
+                Music name:
+                <input type="text" name="name" id="name" required>
+            </label>
 
-        <label for="linkMusic">
-            Write the link of the music:
-            <input type="text" name="linkMusic" id="linkMusic">
-        </label>
+            <label for="author">
+                Author name:
+                <input type="text" name="author" id="author" required>
+            </label>
+
+            <label for="linkImage">
+                Link of image:
+                <input type="text" name="linkImage" id="linkImage" required>
+            </label>
+
+            <label for="linkMusic">
+                Link of music:
+                <input type="text" name="linkMusic" id="linkMusic" required>
+            </label>
 
 
-        <button type="submit">Send</button>
-    </form>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <section id="player">
+        <h1>Manage your playlist</h1>
+
+        <div class="content">
+            <table>
+                <thead>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>Actions</th>
+                </thead>
+
+                <tbody>
+                    <% playlist.forEach((music)=> { %>
+                        <tr class="musics">
+                            <td>
+                                <img src="<%= music.linkImage %>" alt="Image of music">
+                            </td>
+
+                            <td><%= music.name %></td>
+                
+                            <td><%= music.author %></td>
+                
+                            <td id="actions">
+                                <a class="edit" href="#">Edit</a>
+                                <a class="del" href="#">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
+
 </html>

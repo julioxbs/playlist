@@ -97,3 +97,53 @@ section#player table th, td {
 section#player table td img {
     width: 3rem;
 }
+
+
+/* FORM SECTION */
+
+#addForm {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+}
+
+#addForm h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#addForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#addForm form input {
+    width: 100%;
+    margin-top: .5rem;
+}
+
+#addForm form button {
+    padding: .3rem 0;
+    text-transform: uppercase;
+    background-color: greenyellow;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+#actions .edit {
+    color: rgb(75, 75, 209);
+}
+
+#actions .del {
+    color: red;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 968px) {
+    section#player .content {
+        flex-direction: column;
+    }
+}
