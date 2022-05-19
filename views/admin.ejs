@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYLIST</title>
+</head>
+<body>
+    <a href="/">back</a>
+    <h1>Cadastro de uma nova musica</h1>
+
+    <form action="/create" method="post">
+        <label for="name">
+            Write the name of the music:
+            <input type="text" name="name" id="name">
+        </label>
+
+        <label for="author">
+            Write the name of author:
+            <input type="text" name="author" id="author">
+        </label>
+
+        <label for="linkImage">
+            Write the image of the music:
+            <input type="text" name="linkImage" id="linkImage">
+        </label>
+
+        <label for="linkMusic">
+            Write the link of the music:
+            <input type="text" name="linkMusic" id="linkMusic">
+        </label>
+
+
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
