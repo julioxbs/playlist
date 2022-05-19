@@ -6,23 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>PLAYLIST</title>
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <nav>
+        <ul>
+            <li><a href="/">
+                <img src="img/logoblue.png" alt="Logo blue">
+            </a></li>
+            <li><a href="/admin">
+                <i class="bi bi-gear"></i>
+            </a></li>
+        </ul>
+    </nav>
 
-    <a href="/admin">admin</a>
+    <section id="player">
+        <h1>My Favorite Playlist</h1>
 
-    <% playlist.forEach((music)=> { %>
-        <section>
-            <h2><%= music.name %></h2>
+        <div class="content">
+            <div>
+                <img id="currentImg" src="/img/musicoff.jpg" alt="">
+    
+                <h2 id="currentName">Title</h2>
+                <p id="currentArtist">Artist</p>
+            </div>
 
-            <p><%= music.author %></p>
+            <table>
+                <thead>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th></th>
+                </thead>
 
-            <img src="<%= music.linkImage %>" alt="Image of music">
-            <audio src="<%= music.linkMusic %>" controls></audio>
-        </section>
-    <% }) %>
+                <tbody>
+                    <% playlist.forEach((music)=> { %>
+                        <tr class="musics">
+                            <td>
+                                <img src="<%= music.linkImage %>" alt="Image of music">
+                            </td>
+
+                            <td><%= music.name %></td>
+                
+                            <td><%= music.author %></td>
+                
+                            <td>
+                                <audio src="<%= music.linkMusic %>" controls></audio>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
 </html>
