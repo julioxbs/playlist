@@ -133,11 +133,11 @@ section#player table td img {
     cursor: pointer;
 }
 
-#actions .edit {
+.edit {
     color: rgb(75, 75, 209);
 }
 
-#actions .del {
+.del {
     color: red;
     margin-left: 1rem;
 }
@@ -194,7 +194,13 @@ section#modal div#card form#form-modal button {
     cursor: pointer;
 }
 
-
+section#modal div#card .btn_confirmations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
 
 
 

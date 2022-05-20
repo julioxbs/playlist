@@ -79,8 +79,8 @@
                             </td>
 
                             <td id="actions">
-                                <a class="edit" href="/by/<%= music._id %>">Edit</a>
-                                <a class="del" href="#">Delete</a>
+                                <a class="edit" href="/by/<%= music._id %>/edit">Edit</a>
+                                <a class="del" href="/by/<%= music._id %>/delete">Delete</a>
                             </td>
                         </tr>
                         <% }) %>
@@ -113,7 +113,7 @@
 
                     <label for="linkImage">
                         Link of image:
-                        <input type="text" name="linkImage" id="linkImage" required value="<%= music.linkImage %>">
+                        <input type="text" name="linkImage" id="linkImage" value="<%= music.linkImage %>">
                     </label>
 
                     <label for="linkMusic">
@@ -127,6 +127,25 @@
             </div>
 
         </section>
+        <% } %>
+
+        <% if (musicDel !=null) { %>
+            <section id="modal">
+                <div id="card">
+                    <a id="close-modal" href="/admin">
+                        <i class="bi bi-x-lg"></i>
+                    </a>
+    
+                    <h2>Confirmation</h2>
+                    <hr>
+                    <p>Do you wish delete this song: <%= musicDel.name %>?</p>
+    
+                    <div class="btn_confirmations">
+                        <a class="edit" href="/admin">No</a>
+                        <a class="del" href="/delete/<%= musicDel._id %>">Yes</a>
+                    </div>
+                </div>
+            </section>
         <% } %>
 </body>
 
