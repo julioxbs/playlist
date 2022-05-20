@@ -202,10 +202,47 @@ section#modal div#card .btn_confirmations {
     margin-top: 1rem;
 }
 
+/* MEDIA CONTROLS */
+div#controls {
+    background-color: #232327;
+    padding: 1.7rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+div#controls i {
+    font-size: 3rem;
+    cursor: pointer;
+}
 
+div#controls i:hover {
+    background-color: #ffffff10;
+    border-radius: 3rem;
+}
 
+div#controls i#vol-icon {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+div#controls input#progressbar {
+    width: 60%;
+    transition: all 0.3s ease-in-out;
+}
+
+div#controls input#volume {
+    width: 10%;
+    transition: all 0.3s ease-in-out;
+}
+
+div#controls span {
+    padding: 1rem;
+}
 
 @media only screen and (max-width: 968px) {
     section#player .content {
